@@ -35,9 +35,9 @@ change it here
 ROUTER_TAGNAME = os.environ.get("ROUTER_TAGNAME", None)
 
 """ Credentials to get into the webUI """
-ROUTER_USERNAME = os.environ["ROUTER_USERNAME"]
-ROUTER_PASSWORD = os.environ["ROUTER_PASSWORD"]
-ROUTER_URL = os.environ["ROUTER_URL"]
+ROUTER_USERNAME = os.environ["ROUTER_USERNAME"]  # username
+ROUTER_PASSWORD = os.environ["ROUTER_PASSWORD"]  # password123
+ROUTER_URL = os.environ["ROUTER_URL"]  # https://192.168.1.1
 
 """ 
 TRUE for SSL that will validate or the base64 sha256
@@ -46,10 +46,10 @@ fingerprint for the host
 ROUTER_SSL = os.environ.get("ROUTER_SSL", "f" * 64).lower()  # Default to enforcing ssl
 
 """ InfluxDB settings """
-INFLUX_URL = os.environ["INFLUX_URL"]
-INFLUX_BUCKET = os.environ["INFLUX_BUCKET"]
+INFLUX_URL = os.environ["INFLUX_URL"]  # https://influxdb.local:1234
+INFLUX_BUCKET = os.environ["INFLUX_BUCKET"]  # abc
 """ optional influx settings """
-INFLUX_CLIENT_ARGS = os.environ.get("INFLUX_CLIENT_ARGS", "{}")
+INFLUX_CLIENT_ARGS = os.environ.get("INFLUX_CLIENT_ARGS", "{}")  #  {"org": "default", "cert_file": "influx.crt", "cert_key_file": "influx.key"}
 
 
 ssl_check = True

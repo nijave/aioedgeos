@@ -1,4 +1,4 @@
-FROM python:3
+FROM python:3.12
 
 WORKDIR /app
 COPY requirements.txt /app/
@@ -8,4 +8,4 @@ RUN python3 -m pip install --no-cache -U pip wheel setuptools \
 COPY influx.py /app/
 
 ENTRYPOINT ["python3"]
-CMD ["-u", "/app/influx.py"]
+CMD ["/app/influx.py"]
