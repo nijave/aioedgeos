@@ -293,10 +293,9 @@ class EdgeOS:
             subs.append('config-change')
         init = {'SUBSCRIBE': [{'name': x } for x in subs]}
         async for payload in self._ws(init=init):
-            with suppress(KeyError):
-                if reload_on_change and 'config-change' in payload and payload.get('config-change',[])['commit'] == 'ended':
-                    logger.debug("Detected config change, refreshing config cache")
-                    await self.config()
+            if reload_on_change and 'config-change' in payload and payload.get('config-change', {}).get('commit') == 'ended':
+                logger.debug("Detected config change, refreshing config cache")
+                await self.config()
             yield payload
 
     async def _ws(self, init, keepalive=True, timeout=30):
