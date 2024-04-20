@@ -1,6 +1,6 @@
 aiodns==2.0.0
 aioedgeos @ git+https://github.com/nijave/aioedgeos
-aiohttp==3.9.2
+aiohttp==3.9.4
 influxdb-client[async,ciso]==1.38.0
 attrs==19.3.0
 chardet==3.0.4
